@@ -1,8 +1,8 @@
 package lib
 
 import (
-	"github.com/mitroadmaps/gomapinfer/common"
-	"github.com/mitroadmaps/gomapinfer/googlemaps"
+	"github.com/yizhiqin809/ayizhiqin/common"
+	"github.com/yizhiqin809/ayizhiqin/googlemaps"
 
 	"math"
 )
