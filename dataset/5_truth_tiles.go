@@ -2,7 +2,7 @@ package main
 
 import (
 	"./lib"
-	"github.com/mitroadmaps/gomapinfer/common"
+	"github.com/yizhiqin809/ayizhiqin/common"
 
 	"image"
 	"image/color"
