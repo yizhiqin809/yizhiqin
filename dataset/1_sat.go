@@ -31,6 +31,14 @@ func main() {
 
 	var requiredTiles []Tile
 	for _, region := range regions {
+		validRadiusX := region.RadiusX
+        	if region.RadiusX < 0 {
+            		validRadiusX = 0
+        		}
+		validRadiusY := region.RadiusY
+        	if region.RadiusY < 0 {
+           		 validRadiusY = 0
+       			 }
 		for x := -region.RadiusX; x < region.RadiusX; x++ {
 			for y := -region.RadiusY; y < region.RadiusY; y++ {
 				fname := fmt.Sprintf("%s/%s_%d_%d_sat.png", outDir, region.Name, x, y)
@@ -59,7 +67,9 @@ func main() {
 				satelliteImage := googlemaps.GetSatelliteImage(centerGPS, ZOOM, apiKey)
 				for i := 0; i < 512; i++ {
 					for j := 0; j < 512; j++ {
+						if xOffset + i < im.Bounds().Dx() && yOffset + j < im.Bounds().Dy() {
 						im.Set(xOffset + i, yOffset + j, satelliteImage.At(i, j))
+						}
 					}
 				}
 			}
