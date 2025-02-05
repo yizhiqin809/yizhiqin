@@ -10,8 +10,15 @@ import (
 const ZOOM = 18
 
 var regionMap map[string][4]float64 = map[string][4]float64{
-	"indianapolis": [4]float64{39.791906, -86.199312, 39.745338, -86.136280},
-	
+	"louisville": [4]float64{38.266052, -85.773983, 38.237431, -85.716176},
+	"columbus": [4]float64{39.985654, -83.033001, 39.945536, -82.974917},
+	"chicago": [4]float64{41.903117, -87.679072, 41.827860, -87.602447},
+	"milwaukee": [4]float64{43.057586, -87.979920, 43.014847, -87.894497},
+	"minneapolis": [4]float64{44.999464, -93.296841, 44.960608, -93.240171},
+	"seattle": [4]float64{47.626297, -122.353130, 47.591382, -122.316180},
+	"portland": [4]float64{45.532231, -122.695860, 45.497663, -122.653470},
+	"sf": [4]float64{37.804770, -122.429278, 37.761525, -122.379400},
+	"san jose": [4]float64{37.343597, -121.905612, 37.319472, -121.884616},
 }
 
 type Region struct {
@@ -44,12 +51,6 @@ func GetRegions() []Region {
 			CenterWorld: googlemaps.LonLatToMeters(centerGPS),
 		})
 	}
-	regions = append(regions, Region{
-		Name: "boston",
-		RadiusX: 3,
-		RadiusY: 3,
-		CenterGPS: common.Point{-71.107810, 42.352373},
-		CenterWorld: googlemaps.LonLatToMeters(common.Point{-71.107810, 42.352373}),
-	})
+	)
 	return regions
 }
