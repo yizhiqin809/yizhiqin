@@ -51,6 +51,5 @@ func GetRegions() []Region {
 			CenterWorld: googlemaps.LonLatToMeters(centerGPS),
 		})
 	}
-	)
 	return regions
 }
